@@ -2,8 +2,8 @@
 ## cache the result for re-use. The inverse is calculated the first time it is
 ## needed, and then the cached result is used thereafter.
 
-## This function provides a list of functions which wrap a vector, which also
-## provide the capability to also store the inverse of the vector.
+## This function provides a list of functions which wrap a vector. They enable
+## the capability to store (cache) the inverse of the vector.
 ##
 ## Arguments:
 ##      x                       matrix to wrap (defaults to empty matrix)
@@ -45,7 +45,6 @@ makeCacheMatrix <- function(x = matrix()) {
 ##      The inverse of the cached matrix, provided from cache if possible
 
 cacheSolve <- function(x, ...) {
-    ## Return a matrix that is the inverse of 'x'
     
     inverse <- x$getinverse()
     if(!is.null(inverse)){
